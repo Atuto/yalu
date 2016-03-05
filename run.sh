@@ -56,7 +56,7 @@ echo
 # Important stuff
 
 stage0() {
-echo "DISABLE FIND MY PHONE"
+echo "Please disable Find My iPhone before continuing."
 # Waiting for device
 wait_for_device
 
