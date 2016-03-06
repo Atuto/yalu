@@ -10,10 +10,10 @@ if [ ! -f ./XCode.dmg ]; then
   exit 1
 fi
 
-dmg2img XCode.dmg XCode.img
+dmg2img XCode.dmg XCode.img -p 5
 mkdir xcode_tmp
 mount -t hfsplus -o loop,ro XCode.img xcode_tmp
-cp -r xcode_tmp/* .
+cp -r xcode_tmp/Xcode-beta.app/* .
 umount xcode_tmp
 
 cp ./Contents/Platforms/iPhoneOS.platform/DeviceSupport/8.4/DeveloperDiskImage.dmg ..
