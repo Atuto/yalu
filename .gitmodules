@@ -1,0 +1,3 @@
+[submodule "maloader"]
+	path = maloader
+	url = https://github.com/shinh/maloader
