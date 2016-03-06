@@ -1,1 +1,4 @@
-./make.sh;../../bin/afcclient put magic.dylib PhotoData/KimJongCracks/Library/PrivateFrameworks/GPUToolsCore.framework/GPUToolsCore
+#!/bin/bash
+
+./make.sh
+../../bin/afcclient put magic.dylib PhotoData/KimJongCracks/Library/PrivateFrameworks/GPUToolsCore.framework/GPUToolsCore
