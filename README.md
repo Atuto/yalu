@@ -1,6 +1,13 @@
-# yalu
-source code of an incomplete ios 8.4.1 jailbreak.
+# Yalu
+Source code of an incomplete iOS 8.4.1 jailbreak.
+(Port to Linux is even more incomplete.)
 
-Run the following command to download and try out the jailbreak on a Mac OS X system with XCODE.
+## Dependencies
 
-```git clone https://github.com/kpwn/yalu && cd yalu && ./run.sh```
+Mac OSX: XCode.
+
+Linux: A copy of the 8.4 version of DeveloperDiskImage.dmg in the data directory, libimobiledevice, ideviceinstaller, dmg2img.
+
+## Run instructions
+
+```git clone https://github.com/HopeIsEverything/yalu && cd yalu && sudo ./run.sh```
