@@ -10,12 +10,17 @@ if [ ! -f ./XCode.dmg ]; then
   exit 1
 fi
 
+echo "Extracting XCode..."
 dmg2img XCode.dmg XCode.img -p 5
 mkdir xcode_tmp
 mount -t hfsplus -o loop,ro XCode.img xcode_tmp
+echo "Done!"
+echo "Copying XCode contents..."
 cp -r xcode_tmp/Xcode-beta.app/* .
 umount xcode_tmp
+rmdir xcode_tmp
+rm XCode.img
 
-cp ./Contents/Platforms/iPhoneOS.platform/DeviceSupport/8.4/DeveloperDiskImage.dmg ..
+cp ./Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/8.4/DeveloperDiskImage.dmg ..
 
-echo "Extracted!"
+echo "Done!"
