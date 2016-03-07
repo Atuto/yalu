@@ -11,7 +11,7 @@ cd $SCRIPTPATH
 
 function abort()
 {
-  echo "Error.  Exiting..." > &2
+  echo "Error.  Exiting..." >&2
   exit 1;
 }
 
@@ -68,7 +68,7 @@ function stage0()
   mkdir tmp
 
   (
-  echo "Creating directories on device..." > &2
+  echo "Creating directories on device..." >&2
   ./bin/afcclient_lin mkdir PhotoData/KimJongCracks
   ./bin/afcclient_lin mkdir PhotoData/KimJongCracks/a
   ./bin/afcclient_lin mkdir PhotoData/KimJongCracks/a/a
@@ -81,11 +81,11 @@ function stage0()
 
   # Backup device data
 
-  echo "Backing up, this could take several minutes..." > &2
+  echo "Backing up, this could take several minutes..." >&2
   ./bin/idevicebackup2_lin backup tmp || abort
   udid="$(ls tmp | head -1)"
 
-  echo "Mounting DDI and copying files to backup directory..." > &2
+  echo "Mounting DDI and copying files to backup directory..." >&2
 
   mkdir tmp_ddi
   dmg2img -i $ddi -o ./tmp/DeveloperDiskImage.dmg
@@ -95,7 +95,7 @@ function stage0()
   umount ./tmp_ddi
   rm -rf tmp_ddi
 
-  echo "Compiling and copying binary file to device..." > &2
+  echo "Compiling and copying binary file to device..." >&2
 
   ./bin/lipo_lin tmp/MobileReplayer -thin armv7s -output ./tmp/MobileReplayer
   ./bin/mbdbtool tmp $udid CameraRollDomain rm Media/PhotoData/KimJongCracks/a/a/MobileReplayer
