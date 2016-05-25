@@ -16,7 +16,7 @@ mkdir xcode_tmp
 mount -t hfsplus -o loop,ro XCode.img xcode_tmp
 echo "Done!"
 echo "Copying XCode contents..."
-cp -r xcode_tmp/Xcode-beta.app/* .
+cp -r xcode_tmp/Xcode.app/* .
 umount xcode_tmp
 rmdir xcode_tmp
 rm XCode.img
