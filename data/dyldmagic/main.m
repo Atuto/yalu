@@ -132,6 +132,7 @@ size_t g_lnk_size = 0;
 void *g_cs_ptr = NULL;
 size_t g_cs_size = 0;
 
+// HIE: Is this the "ripping signed pages off DYLD" that Qwerty mentioned?
 void dump_dyld_segments(const uint8_t *macho_data)
 {
     if (*(uint32_t *)macho_data == MH_MAGIC)
